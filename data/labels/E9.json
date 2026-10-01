@@ -1,0 +1,55 @@
+{
+  "id": "E9",
+  "title": "Asks for a carport",
+  "profile": "kitchens_joinery",
+  "channel": "email",
+  "tests": "OUT OF SCOPE: asks for a carport - draft politely declines, asks nothing, promises no quote.",
+  "route": "draft_reply",
+  "product_type": "carport",
+  "in_scope": false,
+  "expected_missing": [],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Priya Shah",
+      "status": "stated",
+      "evidence": "Priya Shah"
+    },
+    "contact": {
+      "value": "0491 570 160",
+      "status": "stated",
+      "evidence": "0491 570 160"
+    },
+    "suburb": {
+      "value": "Glenroy",
+      "status": "stated",
+      "evidence": "Glenroy"
+    },
+    "product_type": {
+      "value": "carport",
+      "status": "stated",
+      "evidence": "single carport"
+    },
+    "other_products": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "dimensions": {
+      "value": "about 3m x 6m",
+      "status": "stated",
+      "evidence": "about 3m x 6m"
+    },
+    "timeframe": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "quantity": {
+      "value": "1",
+      "status": "stated",
+      "evidence": "single carport"
+    }
+  }
+}

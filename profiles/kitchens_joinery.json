@@ -1,0 +1,13 @@
+{
+  "profile_id": "kitchens_joinery",
+  "business_name": "Wattlebird Kitchens & Joinery (fictional)",
+  "product_types": ["kitchen", "vanity", "wardrobe"],
+  "always_required": ["customer_name", "contact", "suburb", "product_type", "timeframe"],
+  "required_by_product": {
+    "kitchen":  ["dimensions", "material_or_finish", "colour", "install_required"],
+    "vanity":   ["dimensions", "material_or_finish", "colour", "install_required"],
+    "wardrobe": ["dimensions", "material_or_finish", "colour", "quantity", "install_required"]
+  },
+  "reply_tone": "Warm and design-led. Show interest in their space.",
+  "sign_off": "Warm regards,\nThe Wattlebird Kitchens & Joinery design team"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "E1",
+  "title": "Complete wardrobe request",
+  "profile": "kitchens_joinery",
+  "channel": "email",
+  "tests": "Easy case: every required field is stated.",
+  "route": "draft_reply",
+  "product_type": "wardrobe",
+  "expected_missing": [],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Daniel Russo",
+      "status": "stated",
+      "evidence": "Daniel Russo"
+    },
+    "contact": {
+      "value": "0491 570 156",
+      "status": "stated",
+      "evidence": "0491 570 156"
+    },
+    "suburb": {
+      "value": "Pascoe Vale",
+      "status": "stated",
+      "evidence": "Pascoe Vale"
+    },
+    "product_type": {
+      "value": "wardrobe",
+      "status": "stated",
+      "evidence": "built-in wardrobe"
+    },
+    "other_products": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "timeframe": {
+      "value": "before Christmas",
+      "status": "stated",
+      "evidence": "before Christmas"
+    },
+    "dimensions": {
+      "value": "2.4m wide x 2.7m high",
+      "status": "stated",
+      "evidence": "The wall is 2.4m wide and the ceiling is 2.7m"
+    },
+    "material_or_finish": {
+      "value": "laminate sliding doors",
+      "status": "stated",
+      "evidence": "Laminate sliding doors"
+    },
+    "colour": {
+      "value": "Polar White",
+      "status": "stated",
+      "evidence": "Polar White"
+    },
+    "quantity": {
+      "value": "1",
+      "status": "stated",
+      "evidence": "Just the one robe"
+    },
+    "install_required": {
+      "value": true,
+      "status": "stated",
+      "evidence": "We'd need it installed"
+    }
+  }
+}

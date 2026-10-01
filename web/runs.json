@@ -1,0 +1,2412 @@
+{
+  "run_at": "2026-10-01T22:43:27",
+  "models": {
+    "extract_and_reply": "claude-sonnet-5-5",
+    "classify": "claude-haiku-4-5"
+  },
+  "prices_usd_per_mtok": {
+    "claude-sonnet-5-5": [
+      2.0,
+      10.0
+    ],
+    "claude-haiku-4-5": [
+      1.0,
+      5.0
+    ]
+  },
+  "aud_per_usd": 1.52,
+  "profiles": {
+    "kitchens_joinery": {
+      "business_name": "Wattlebird Kitchens & Joinery (fictional)",
+      "product_types": [
+        "kitchen",
+        "vanity",
+        "wardrobe"
+      ],
+      "always_required": [
+        "customer_name",
+        "contact",
+        "suburb",
+        "product_type",
+        "timeframe"
+      ],
+      "required_by_product": {
+        "kitchen": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "vanity": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "wardrobe": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "quantity",
+          "install_required"
+        ]
+      }
+    },
+    "outdoor_structures": {
+      "business_name": "Ironbark Outdoor Structures (fictional)",
+      "product_types": [
+        "carport",
+        "shed",
+        "verandah"
+      ],
+      "always_required": [
+        "customer_name",
+        "contact",
+        "suburb",
+        "product_type",
+        "timeframe"
+      ],
+      "required_by_product": {
+        "carport": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required",
+          "site_access"
+        ],
+        "shed": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required",
+          "site_access"
+        ],
+        "verandah": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required",
+          "site_access"
+        ]
+      }
+    },
+    "windows_doors": {
+      "business_name": "Kestrel Windows & Doors (fictional)",
+      "product_types": [
+        "windows",
+        "sliding door",
+        "security screen"
+      ],
+      "always_required": [
+        "customer_name",
+        "contact",
+        "suburb",
+        "product_type",
+        "timeframe"
+      ],
+      "required_by_product": {
+        "windows": [
+          "dimensions",
+          "quantity",
+          "material_or_finish",
+          "install_required"
+        ],
+        "sliding door": [
+          "dimensions",
+          "quantity",
+          "material_or_finish",
+          "install_required"
+        ],
+        "security screen": [
+          "dimensions",
+          "quantity",
+          "material_or_finish",
+          "install_required"
+        ]
+      }
+    }
+  },
+  "enquiries": {
+    "E1": {
+      "text": "Subject: Quote for built-in wardrobe\n\nHi there,\n\nI'm after a quote for a built-in wardrobe in the main bedroom at my place in Pascoe Vale. The wall is 2.4m wide and the ceiling is 2.7m, so floor to ceiling would be great. Just the one robe. Laminate sliding doors in Polar White to match the rest of the house. We'd need it installed.\n\nHoping to have it done before Christmas.\n\nThanks,\nDaniel Russo\n0491 570 156\n",
+      "profile": "kitchens_joinery",
+      "title": "Complete wardrobe request",
+      "channel": "email"
+    },
+    "E2": {
+      "text": "Name: Kez\nPhone: 0491 570 157\nSuburb: Broadmeadows\nProduct: Kitchen\nMessage: need a new kitchen asap how much\n",
+      "profile": "kitchens_joinery",
+      "title": "Vague, asks \u201chow much\u201d",
+      "channel": "web_form"
+    },
+    "E3": {
+      "text": "Subject: Kitchen reno \u2013 where do we even start?\n\nHello,\n\nWe bought our place in Essendon last year and have finally decided to tackle the kitchen. It's the original 1970s one and honestly it's falling apart \u2013 two of the drawers don't close and the benchtop has a burn mark from the previous owners. My partner and I have been going back and forth on styles for months. We saw a display at a home show and loved the handleless look.\n\nThe room is about 4.2 by 3 metres. We're thinking two-pac doors, and the colour is still undecided between white and a soft grey. We'd want you to install it as we're not handy at all!\n\nWe're hoping to start in February if possible. Our kids are back at school then which makes it easier.\n\nKind regards,\nMei Lin Tan\nmeilin.tan@example.com\n",
+      "profile": "kitchens_joinery",
+      "title": "Long, rambling kitchen email",
+      "channel": "email"
+    },
+    "E4": {
+      "text": "Call 29/9 10:40am - Jess\nCust: Tom Nguyen, mob 0491 570 158\nLocation: Coburg\nWants vanity for main bathroom, approx 1200w, stone top? not sure. Old one ripped out already.\nWants install. No rush, sometime in new yr.\nMentioned wife wants wardrobes quoted later too.\n",
+      "profile": "kitchens_joinery",
+      "title": "Shorthand call notes",
+      "channel": "call_notes"
+    },
+    "E5": {
+      "text": "Hi,\n\nHow much roughly for a 900mm wall-hung vanity? Timber-look laminate in Natural Oak. It's for the ensuite at our house in Gladstone Park. Need it supplied and installed.\n\nCheers,\nAnita Kovac\nanita.k@example.com\n",
+      "profile": "kitchens_joinery",
+      "title": "Price trap",
+      "channel": "email"
+    },
+    "E6": {
+      "text": "Name: Sam Oduya\nPhone: 0491 570 159\nSuburb: Fawkner\nProduct: Wardrobe\nQuantity: 2\nMessage: Built-in robes for the kids' bedrooms. Sizes: 1800w, 2100w, 2400w, all 2.4m high. Laminate doors in Snow White. Install please. Within 2 months.\n",
+      "profile": "kitchens_joinery",
+      "title": "Details contradict (2 vs 3)",
+      "channel": "web_form"
+    },
+    "E7": {
+      "text": "Subject: STILL waiting on my quote\n\nI sent my details two weeks ago for a new kitchen and nobody has come back to me. This is ridiculous. If I don't hear from someone today I'm going elsewhere.\n\nGreg Pappas\nHadfield\n0491 570 110\n",
+      "profile": "kitchens_joinery",
+      "title": "Angry follow-up",
+      "channel": "email"
+    },
+    "E8": {
+      "text": "Subject: Updated board price list \u2013 effective 1 November\n\nHi team,\n\nPlease find attached our updated price list for melamine board, two-pac panels and drawer hardware, effective 1 November. Contact your account manager with any questions.\n\nRegards,\nAccounts Team\nNorthside Board & Hardware (fictional)\n",
+      "profile": "kitchens_joinery",
+      "title": "Supplier price list",
+      "channel": "email"
+    },
+    "E9": {
+      "text": "Subject: Carport?\n\nHi, do you guys do carports? Looking for a single carport, about 3m x 6m, at my place in Glenroy.\n\nThanks,\nPriya Shah\n0491 570 160\n",
+      "profile": "kitchens_joinery",
+      "title": "Asks for a carport",
+      "channel": "email"
+    },
+    "E10": {
+      "text": "Name: Liam Walsh\nEmail: liam.walsh@example.com\nSuburb: Oak Park\nProduct: Other\nMessage: Can you replace the two old aluminium windows in our kitchen? They're about 1200 x 900 each. Kitchen itself is fine, just the windows.\n",
+      "profile": "kitchens_joinery",
+      "title": "Says \u201ckitchen\u201d, wants windows",
+      "channel": "web_form"
+    }
+  },
+  "runs": [
+    {
+      "enquiry_id": "E1",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is requesting a quote for a built-in wardrobe with specific dimensions, materials, and installation, indicating intent to purchase a product from the business."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Daniel Russo",
+          "status": "stated",
+          "evidence": "Daniel Russo"
+        },
+        "contact": {
+          "value": "0491 570 156",
+          "status": "stated",
+          "evidence": "0491 570 156"
+        },
+        "suburb": {
+          "value": "Pascoe Vale",
+          "status": "stated",
+          "evidence": "Pascoe Vale"
+        },
+        "product_type": {
+          "value": "wardrobe",
+          "status": "stated",
+          "evidence": "built-in wardrobe"
+        },
+        "other_products": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "timeframe": {
+          "value": "before Christmas",
+          "status": "stated",
+          "evidence": "before Christmas"
+        },
+        "dimensions": {
+          "value": "Wall 2.4m wide, ceiling 2.7m high; floor to ceiling",
+          "status": "stated",
+          "evidence": "The wall is 2.4m wide and the ceiling is 2.7m"
+        },
+        "material_or_finish": {
+          "value": "Laminate sliding doors",
+          "status": "stated",
+          "evidence": "Laminate sliding doors"
+        },
+        "colour": {
+          "value": "Polar White",
+          "status": "stated",
+          "evidence": "Polar White"
+        },
+        "quantity": {
+          "value": "1",
+          "status": "stated",
+          "evidence": "Just the one robe."
+        },
+        "install_required": {
+          "value": true,
+          "status": "stated",
+          "evidence": "We'd need it installed."
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Located in the main bedroom; colour to match the rest of the house.",
+          "status": "stated",
+          "evidence": "main bedroom"
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": "wardrobe",
+        "out_of_scope": false,
+        "required": [
+          "customer_name",
+          "contact",
+          "suburb",
+          "product_type",
+          "timeframe",
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "quantity",
+          "install_required"
+        ],
+        "missing": [],
+        "conflicts": []
+      },
+      "reply": {
+        "body": "Hi Daniel,\n\nThanks for getting in touch about a built-in wardrobe for your main bedroom in Pascoe Vale.\n\nThe estimator has what they need and will be in touch.",
+        "text": "Hi Daniel,\n\nThanks for getting in touch about a built-in wardrobe for your main bedroom in Pascoe Vale.\n\nThe estimator has what they need and will be in touch.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": []
+      },
+      "brief": {
+        "enquiry_id": "E1",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": "wardrobe",
+        "missing": [],
+        "flags": [],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Daniel Russo",
+            "status": "stated",
+            "evidence": "Daniel Russo",
+            "required": true
+          },
+          {
+            "field": "contact",
+            "value": "0491 570 156",
+            "status": "stated",
+            "evidence": "0491 570 156",
+            "required": true
+          },
+          {
+            "field": "suburb",
+            "value": "Pascoe Vale",
+            "status": "stated",
+            "evidence": "Pascoe Vale",
+            "required": true
+          },
+          {
+            "field": "product_type",
+            "value": "wardrobe",
+            "status": "stated",
+            "evidence": "built-in wardrobe",
+            "required": true
+          },
+          {
+            "field": "other_products",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": "before Christmas",
+            "status": "stated",
+            "evidence": "before Christmas",
+            "required": true
+          },
+          {
+            "field": "dimensions",
+            "value": "Wall 2.4m wide, ceiling 2.7m high; floor to ceiling",
+            "status": "stated",
+            "evidence": "The wall is 2.4m wide and the ceiling is 2.7m",
+            "required": true
+          },
+          {
+            "field": "material_or_finish",
+            "value": "Laminate sliding doors",
+            "status": "stated",
+            "evidence": "Laminate sliding doors",
+            "required": true
+          },
+          {
+            "field": "colour",
+            "value": "Polar White",
+            "status": "stated",
+            "evidence": "Polar White",
+            "required": true
+          },
+          {
+            "field": "quantity",
+            "value": "1",
+            "status": "stated",
+            "evidence": "Just the one robe.",
+            "required": true
+          },
+          {
+            "field": "install_required",
+            "value": true,
+            "status": "stated",
+            "evidence": "We'd need it installed.",
+            "required": true
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Located in the main bedroom; colour to match the rest of the house.",
+            "status": "stated",
+            "evidence": "main bedroom",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 6.48,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 573,
+          "output_tokens": 47,
+          "seconds": 1.31,
+          "cost_usd": 0.000808,
+          "cost_aud": 0.00122816
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1982,
+          "output_tokens": 559,
+          "seconds": 3.49,
+          "cost_usd": 0.009554,
+          "cost_aud": 0.01452208
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1189,
+          "output_tokens": 76,
+          "seconds": 1.69,
+          "cost_usd": 0.003138,
+          "cost_aud": 0.0047697600000000005
+        }
+      ],
+      "cost_aud": 0.02052
+    },
+    {
+      "enquiry_id": "E2",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is asking about purchasing a new kitchen and inquiring about pricing."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Kez",
+          "status": "stated",
+          "evidence": "Kez"
+        },
+        "contact": {
+          "value": "0491 570 157",
+          "status": "stated",
+          "evidence": "0491 570 157"
+        },
+        "suburb": {
+          "value": "Broadmeadows",
+          "status": "stated",
+          "evidence": "Broadmeadows"
+        },
+        "product_type": {
+          "value": "kitchen",
+          "status": "stated",
+          "evidence": "need a new kitchen"
+        },
+        "other_products": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "timeframe": {
+          "value": "asap",
+          "status": "stated",
+          "evidence": "asap"
+        },
+        "dimensions": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "material_or_finish": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "colour": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "quantity": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "install_required": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Customer asked for a price (\"how much\") but gave no sizes, layout or other details.",
+          "status": "stated",
+          "evidence": "how much"
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": "kitchen",
+        "out_of_scope": false,
+        "required": [
+          "customer_name",
+          "contact",
+          "suburb",
+          "product_type",
+          "timeframe",
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "missing": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "conflicts": []
+      },
+      "reply": {
+        "body": "Hi Kez,\n\nThanks for getting in touch about a new kitchen in Broadmeadows.\n\nTo get your quote moving, could you let us know:\n\n- The size of the space (rough measurements are fine)\n- The material or finish you have in mind\n- The colour you'd like\n- Whether you need installation\n\nOnce we have these details, our estimator will prepare a quote for you.",
+        "text": "Hi Kez,\n\nThanks for getting in touch about a new kitchen in Broadmeadows.\n\nTo get your quote moving, could you let us know:\n\n- The size of the space (rough measurements are fine)\n- The material or finish you have in mind\n- The colour you'd like\n- Whether you need installation\n\nOnce we have these details, our estimator will prepare a quote for you.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": []
+      },
+      "brief": {
+        "enquiry_id": "E2",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": "kitchen",
+        "missing": [
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "flags": [],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Kez",
+            "status": "stated",
+            "evidence": "Kez",
+            "required": true
+          },
+          {
+            "field": "contact",
+            "value": "0491 570 157",
+            "status": "stated",
+            "evidence": "0491 570 157",
+            "required": true
+          },
+          {
+            "field": "suburb",
+            "value": "Broadmeadows",
+            "status": "stated",
+            "evidence": "Broadmeadows",
+            "required": true
+          },
+          {
+            "field": "product_type",
+            "value": "kitchen",
+            "status": "stated",
+            "evidence": "need a new kitchen",
+            "required": true
+          },
+          {
+            "field": "other_products",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": "asap",
+            "status": "stated",
+            "evidence": "asap",
+            "required": true
+          },
+          {
+            "field": "dimensions",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": true
+          },
+          {
+            "field": "material_or_finish",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": true
+          },
+          {
+            "field": "colour",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": true
+          },
+          {
+            "field": "quantity",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "install_required",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": true
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Customer asked for a price (\"how much\") but gave no sizes, layout or other details.",
+            "status": "stated",
+            "evidence": "how much",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 7.16,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 491,
+          "output_tokens": 29,
+          "seconds": 0.96,
+          "cost_usd": 0.000636,
+          "cost_aud": 0.0009667199999999999
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1867,
+          "output_tokens": 453,
+          "seconds": 3.52,
+          "cost_usd": 0.008264,
+          "cost_aud": 0.012561280000000001
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1085,
+          "output_tokens": 142,
+          "seconds": 2.68,
+          "cost_usd": 0.00359,
+          "cost_aud": 0.0054567999999999995
+        }
+      ],
+      "cost_aud": 0.018984800000000003
+    },
+    {
+      "enquiry_id": "E3",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is asking about a kitchen renovation project, describing their space, preferences, and timeline to request a quote and installation services."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Mei Lin Tan",
+          "status": "stated",
+          "evidence": "Mei Lin Tan"
+        },
+        "contact": {
+          "value": "meilin.tan@example.com",
+          "status": "stated",
+          "evidence": "meilin.tan@example.com"
+        },
+        "suburb": {
+          "value": "Essendon",
+          "status": "stated",
+          "evidence": "Essendon"
+        },
+        "product_type": {
+          "value": "kitchen",
+          "status": "stated",
+          "evidence": "tackle the kitchen"
+        },
+        "other_products": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "timeframe": {
+          "value": "start in February if possible",
+          "status": "stated",
+          "evidence": "hoping to start in February if possible"
+        },
+        "dimensions": {
+          "value": "Room is about 4.2 by 3 metres",
+          "status": "stated",
+          "evidence": "about 4.2 by 3 metres"
+        },
+        "material_or_finish": {
+          "value": "Two-pac doors, handleless look (unconfirmed, customer says 'thinking' two-pac)",
+          "status": "inferred",
+          "evidence": "We're thinking two-pac doors"
+        },
+        "colour": {
+          "value": "Undecided between white and a soft grey",
+          "status": "stated",
+          "evidence": "the colour is still undecided between white and a soft grey"
+        },
+        "quantity": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "install_required": {
+          "value": true,
+          "status": "stated",
+          "evidence": "We'd want you to install it"
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Original 1970s kitchen in poor condition: two drawers don't close, burn mark on benchtop. Customers liked a handleless look seen at a home show. Kids go back to school in February, which suits the start date. Customers have been undecided on styles for months and are unsure where to start.",
+          "status": "stated",
+          "evidence": "two of the drawers don't close and the benchtop has a burn mark"
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": "kitchen",
+        "out_of_scope": false,
+        "required": [
+          "customer_name",
+          "contact",
+          "suburb",
+          "product_type",
+          "timeframe",
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "missing": [],
+        "conflicts": []
+      },
+      "reply": {
+        "body": "Hi Mei Lin,\n\nThanks for getting in touch about a new kitchen in Essendon.\n\nThe estimator has what they need and will be in touch.",
+        "text": "Hi Mei Lin,\n\nThanks for getting in touch about a new kitchen in Essendon.\n\nThe estimator has what they need and will be in touch.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": []
+      },
+      "brief": {
+        "enquiry_id": "E3",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": "kitchen",
+        "missing": [],
+        "flags": [
+          "material_or_finish: inferred"
+        ],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Mei Lin Tan",
+            "status": "stated",
+            "evidence": "Mei Lin Tan",
+            "required": true
+          },
+          {
+            "field": "contact",
+            "value": "meilin.tan@example.com",
+            "status": "stated",
+            "evidence": "meilin.tan@example.com",
+            "required": true
+          },
+          {
+            "field": "suburb",
+            "value": "Essendon",
+            "status": "stated",
+            "evidence": "Essendon",
+            "required": true
+          },
+          {
+            "field": "product_type",
+            "value": "kitchen",
+            "status": "stated",
+            "evidence": "tackle the kitchen",
+            "required": true
+          },
+          {
+            "field": "other_products",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": "start in February if possible",
+            "status": "stated",
+            "evidence": "hoping to start in February if possible",
+            "required": true
+          },
+          {
+            "field": "dimensions",
+            "value": "Room is about 4.2 by 3 metres",
+            "status": "stated",
+            "evidence": "about 4.2 by 3 metres",
+            "required": true
+          },
+          {
+            "field": "material_or_finish",
+            "value": "Two-pac doors, handleless look (unconfirmed, customer says 'thinking' two-pac)",
+            "status": "inferred",
+            "evidence": "We're thinking two-pac doors",
+            "required": true
+          },
+          {
+            "field": "colour",
+            "value": "Undecided between white and a soft grey",
+            "status": "stated",
+            "evidence": "the colour is still undecided between white and a soft grey",
+            "required": true
+          },
+          {
+            "field": "quantity",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "install_required",
+            "value": true,
+            "status": "stated",
+            "evidence": "We'd want you to install it",
+            "required": true
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Original 1970s kitchen in poor condition: two drawers don't close, burn mark on benchtop. Customers liked a handleless look seen at a home show. Kids go back to school in February, which suits the start date. Customers have been undecided on styles for months and are unsure where to start.",
+            "status": "stated",
+            "evidence": "two of the drawers don't close and the benchtop has a burn mark",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 7.94,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 654,
+          "output_tokens": 40,
+          "seconds": 1.07,
+          "cost_usd": 0.000854,
+          "cost_aud": 0.00129808
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 2070,
+          "output_tokens": 670,
+          "seconds": 5.29,
+          "cost_usd": 0.01084,
+          "cost_aud": 0.0164768
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1279,
+          "output_tokens": 64,
+          "seconds": 1.58,
+          "cost_usd": 0.003198,
+          "cost_aud": 0.00486096
+        }
+      ],
+      "cost_aud": 0.02263584
+    },
+    {
+      "enquiry_id": "E4",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is seeking quotes for bathroom vanity installation and future wardrobe work, indicating interest in purchasing products and services from the business."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Tom Nguyen",
+          "status": "stated",
+          "evidence": "Tom Nguyen"
+        },
+        "contact": {
+          "value": "0491 570 158",
+          "status": "stated",
+          "evidence": "0491 570 158"
+        },
+        "suburb": {
+          "value": "Coburg",
+          "status": "stated",
+          "evidence": "Coburg"
+        },
+        "product_type": {
+          "value": "vanity",
+          "status": "stated",
+          "evidence": "vanity"
+        },
+        "other_products": {
+          "value": "wardrobes (to be quoted later)",
+          "status": "stated",
+          "evidence": "wife wants wardrobes quoted later too"
+        },
+        "timeframe": {
+          "value": "No rush, sometime in new year",
+          "status": "stated",
+          "evidence": "No rush, sometime in new yr."
+        },
+        "dimensions": {
+          "value": "approx 1200w",
+          "status": "stated",
+          "evidence": "approx 1200w"
+        },
+        "material_or_finish": {
+          "value": "Stone top unconfirmed - customer not sure",
+          "status": "inferred",
+          "evidence": "stone top? not sure"
+        },
+        "colour": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "quantity": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "install_required": {
+          "value": true,
+          "status": "stated",
+          "evidence": "Wants install"
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Vanity is for the main bathroom. Old vanity already removed. Call taken 29/9 10:40am by Jess.",
+          "status": "stated",
+          "evidence": "Old one ripped out already."
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": "vanity",
+        "out_of_scope": false,
+        "required": [
+          "customer_name",
+          "contact",
+          "suburb",
+          "product_type",
+          "timeframe",
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "missing": [
+          "colour"
+        ],
+        "conflicts": []
+      },
+      "reply": {
+        "body": "Hi Tom,\n\nThanks for getting in touch about a vanity for your bathroom in Coburg.\n\nWhat colour are you thinking for the vanity?\n\nOnce we have that, the estimator will prepare your quote.",
+        "text": "Hi Tom,\n\nThanks for getting in touch about a vanity for your bathroom in Coburg.\n\nWhat colour are you thinking for the vanity?\n\nOnce we have that, the estimator will prepare your quote.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": [
+          "They also asked about wardrobes (to be quoted later). The draft only covers one product; answer the rest yourself."
+        ]
+      },
+      "brief": {
+        "enquiry_id": "E4",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": "vanity",
+        "missing": [
+          "colour"
+        ],
+        "flags": [
+          "material_or_finish: inferred",
+          "also asked about: wardrobes (to be quoted later)"
+        ],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Tom Nguyen",
+            "status": "stated",
+            "evidence": "Tom Nguyen",
+            "required": true
+          },
+          {
+            "field": "contact",
+            "value": "0491 570 158",
+            "status": "stated",
+            "evidence": "0491 570 158",
+            "required": true
+          },
+          {
+            "field": "suburb",
+            "value": "Coburg",
+            "status": "stated",
+            "evidence": "Coburg",
+            "required": true
+          },
+          {
+            "field": "product_type",
+            "value": "vanity",
+            "status": "stated",
+            "evidence": "vanity",
+            "required": true
+          },
+          {
+            "field": "other_products",
+            "value": "wardrobes (to be quoted later)",
+            "status": "stated",
+            "evidence": "wife wants wardrobes quoted later too",
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": "No rush, sometime in new year",
+            "status": "stated",
+            "evidence": "No rush, sometime in new yr.",
+            "required": true
+          },
+          {
+            "field": "dimensions",
+            "value": "approx 1200w",
+            "status": "stated",
+            "evidence": "approx 1200w",
+            "required": true
+          },
+          {
+            "field": "material_or_finish",
+            "value": "Stone top unconfirmed - customer not sure",
+            "status": "inferred",
+            "evidence": "stone top? not sure",
+            "required": true
+          },
+          {
+            "field": "colour",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": true
+          },
+          {
+            "field": "quantity",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "install_required",
+            "value": true,
+            "status": "stated",
+            "evidence": "Wants install",
+            "required": true
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Vanity is for the main bathroom. Old vanity already removed. Call taken 29/9 10:40am by Jess.",
+            "status": "stated",
+            "evidence": "Old one ripped out already.",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 6.45,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 544,
+          "output_tokens": 42,
+          "seconds": 1.2,
+          "cost_usd": 0.000754,
+          "cost_aud": 0.00114608
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1935,
+          "output_tokens": 554,
+          "seconds": 3.58,
+          "cost_usd": 0.00941,
+          "cost_aud": 0.0143032
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1142,
+          "output_tokens": 88,
+          "seconds": 1.66,
+          "cost_usd": 0.003164,
+          "cost_aud": 0.00480928
+        }
+      ],
+      "cost_aud": 0.020258560000000002
+    },
+    {
+      "enquiry_id": "E5",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is requesting a price quote for a specific vanity product with installation, which is a direct product inquiry from a potential buyer."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Anita Kovac",
+          "status": "stated",
+          "evidence": "Anita Kovac"
+        },
+        "contact": {
+          "value": "anita.k@example.com",
+          "status": "stated",
+          "evidence": "anita.k@example.com"
+        },
+        "suburb": {
+          "value": "Gladstone Park",
+          "status": "stated",
+          "evidence": "Gladstone Park"
+        },
+        "product_type": {
+          "value": "vanity",
+          "status": "stated",
+          "evidence": "900mm wall-hung vanity"
+        },
+        "other_products": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "timeframe": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "dimensions": {
+          "value": "900mm",
+          "status": "stated",
+          "evidence": "900mm"
+        },
+        "material_or_finish": {
+          "value": "Timber-look laminate",
+          "status": "stated",
+          "evidence": "Timber-look laminate"
+        },
+        "colour": {
+          "value": "Natural Oak",
+          "status": "stated",
+          "evidence": "Natural Oak"
+        },
+        "quantity": {
+          "value": "1 (unconfirmed)",
+          "status": "inferred",
+          "evidence": "a 900mm wall-hung vanity"
+        },
+        "install_required": {
+          "value": true,
+          "status": "stated",
+          "evidence": "Need it supplied and installed."
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Customer wants a rough price. Vanity is wall-hung and for the ensuite of their house.",
+          "status": "stated",
+          "evidence": "How much roughly"
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": "vanity",
+        "out_of_scope": false,
+        "required": [
+          "customer_name",
+          "contact",
+          "suburb",
+          "product_type",
+          "timeframe",
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "install_required"
+        ],
+        "missing": [
+          "timeframe"
+        ],
+        "conflicts": []
+      },
+      "reply": {
+        "body": "Hi Anita,\n\nThanks for getting in touch about a wall-hung vanity for your Gladstone Park ensuite.\n\nWhen are you hoping to have it installed? A rough timeframe is fine.\n\nOnce we have that, our estimator will prepare a quote for you.",
+        "text": "Hi Anita,\n\nThanks for getting in touch about a wall-hung vanity for your Gladstone Park ensuite.\n\nWhen are you hoping to have it installed? A rough timeframe is fine.\n\nOnce we have that, our estimator will prepare a quote for you.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": []
+      },
+      "brief": {
+        "enquiry_id": "E5",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": "vanity",
+        "missing": [
+          "timeframe"
+        ],
+        "flags": [
+          "quantity: inferred"
+        ],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Anita Kovac",
+            "status": "stated",
+            "evidence": "Anita Kovac",
+            "required": true
+          },
+          {
+            "field": "contact",
+            "value": "anita.k@example.com",
+            "status": "stated",
+            "evidence": "anita.k@example.com",
+            "required": true
+          },
+          {
+            "field": "suburb",
+            "value": "Gladstone Park",
+            "status": "stated",
+            "evidence": "Gladstone Park",
+            "required": true
+          },
+          {
+            "field": "product_type",
+            "value": "vanity",
+            "status": "stated",
+            "evidence": "900mm wall-hung vanity",
+            "required": true
+          },
+          {
+            "field": "other_products",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": true
+          },
+          {
+            "field": "dimensions",
+            "value": "900mm",
+            "status": "stated",
+            "evidence": "900mm",
+            "required": true
+          },
+          {
+            "field": "material_or_finish",
+            "value": "Timber-look laminate",
+            "status": "stated",
+            "evidence": "Timber-look laminate",
+            "required": true
+          },
+          {
+            "field": "colour",
+            "value": "Natural Oak",
+            "status": "stated",
+            "evidence": "Natural Oak",
+            "required": true
+          },
+          {
+            "field": "quantity",
+            "value": "1 (unconfirmed)",
+            "status": "inferred",
+            "evidence": "a 900mm wall-hung vanity",
+            "required": false
+          },
+          {
+            "field": "install_required",
+            "value": true,
+            "status": "stated",
+            "evidence": "Need it supplied and installed.",
+            "required": true
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Customer wants a rough price. Vanity is wall-hung and for the ensuite of their house.",
+            "status": "stated",
+            "evidence": "How much roughly",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 6.61,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 521,
+          "output_tokens": 41,
+          "seconds": 1.26,
+          "cost_usd": 0.000726,
+          "cost_aud": 0.00110352
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1906,
+          "output_tokens": 537,
+          "seconds": 3.54,
+          "cost_usd": 0.009182,
+          "cost_aud": 0.01395664
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1114,
+          "output_tokens": 106,
+          "seconds": 1.8,
+          "cost_usd": 0.003288,
+          "cost_aud": 0.00499776
+        }
+      ],
+      "cost_aud": 0.02005792
+    },
+    {
+      "enquiry_id": "E6",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is requesting a quote for built-in wardrobes with specific dimensions, materials, and installation requirements."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Sam Oduya",
+          "status": "stated",
+          "evidence": "Sam Oduya"
+        },
+        "contact": {
+          "value": "0491 570 159",
+          "status": "stated",
+          "evidence": "0491 570 159"
+        },
+        "suburb": {
+          "value": "Fawkner",
+          "status": "stated",
+          "evidence": "Fawkner"
+        },
+        "product_type": {
+          "value": "wardrobe",
+          "status": "stated",
+          "evidence": "Wardrobe"
+        },
+        "other_products": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "timeframe": {
+          "value": "Within 2 months",
+          "status": "stated",
+          "evidence": "Within 2 months"
+        },
+        "dimensions": {
+          "value": "1800w, 2100w, 2400w, all 2.4m high",
+          "status": "stated",
+          "evidence": "1800w, 2100w, 2400w, all 2.4m high"
+        },
+        "material_or_finish": {
+          "value": "Laminate doors",
+          "status": "stated",
+          "evidence": "Laminate doors"
+        },
+        "colour": {
+          "value": "Snow White",
+          "status": "stated",
+          "evidence": "Snow White"
+        },
+        "quantity": {
+          "value": "Conflict: form says 2 wardrobes, but 3 sizes are listed (1800w, 2100w, 2400w)",
+          "status": "conflict",
+          "evidence": "Quantity: 2"
+        },
+        "install_required": {
+          "value": true,
+          "status": "stated",
+          "evidence": "Install please."
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Built-in robes for the kids' bedrooms. Confirm whether 2 or 3 wardrobes are needed given three sizes listed.",
+          "status": "stated",
+          "evidence": "Built-in robes for the kids' bedrooms."
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": "wardrobe",
+        "out_of_scope": false,
+        "required": [
+          "customer_name",
+          "contact",
+          "suburb",
+          "product_type",
+          "timeframe",
+          "dimensions",
+          "material_or_finish",
+          "colour",
+          "quantity",
+          "install_required"
+        ],
+        "missing": [],
+        "conflicts": [
+          "quantity"
+        ]
+      },
+      "reply": {
+        "body": "Hi Sam,\n\nThanks for your enquiry about built-in wardrobes in Fawkner.\n\nYour form says 2 wardrobes, but you've listed three sizes (1800w, 2100w and 2400w). Could you let me know which is right: 2 wardrobes, or 3, and which sizes you'd like?\n\nOnce we have that, the estimator will prepare your quote.",
+        "text": "Hi Sam,\n\nThanks for your enquiry about built-in wardrobes in Fawkner.\n\nYour form says 2 wardrobes, but you've listed three sizes (1800w, 2100w and 2400w). Could you let me know which is right: 2 wardrobes, or 3, and which sizes you'd like?\n\nOnce we have that, the estimator will prepare your quote.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": []
+      },
+      "brief": {
+        "enquiry_id": "E6",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": "wardrobe",
+        "missing": [],
+        "flags": [
+          "quantity: conflict"
+        ],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Sam Oduya",
+            "status": "stated",
+            "evidence": "Sam Oduya",
+            "required": true
+          },
+          {
+            "field": "contact",
+            "value": "0491 570 159",
+            "status": "stated",
+            "evidence": "0491 570 159",
+            "required": true
+          },
+          {
+            "field": "suburb",
+            "value": "Fawkner",
+            "status": "stated",
+            "evidence": "Fawkner",
+            "required": true
+          },
+          {
+            "field": "product_type",
+            "value": "wardrobe",
+            "status": "stated",
+            "evidence": "Wardrobe",
+            "required": true
+          },
+          {
+            "field": "other_products",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": "Within 2 months",
+            "status": "stated",
+            "evidence": "Within 2 months",
+            "required": true
+          },
+          {
+            "field": "dimensions",
+            "value": "1800w, 2100w, 2400w, all 2.4m high",
+            "status": "stated",
+            "evidence": "1800w, 2100w, 2400w, all 2.4m high",
+            "required": true
+          },
+          {
+            "field": "material_or_finish",
+            "value": "Laminate doors",
+            "status": "stated",
+            "evidence": "Laminate doors",
+            "required": true
+          },
+          {
+            "field": "colour",
+            "value": "Snow White",
+            "status": "stated",
+            "evidence": "Snow White",
+            "required": true
+          },
+          {
+            "field": "quantity",
+            "value": "Conflict: form says 2 wardrobes, but 3 sizes are listed (1800w, 2100w, 2400w)",
+            "status": "conflict",
+            "evidence": "Quantity: 2",
+            "required": true
+          },
+          {
+            "field": "install_required",
+            "value": true,
+            "status": "stated",
+            "evidence": "Install please.",
+            "required": true
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Built-in robes for the kids' bedrooms. Confirm whether 2 or 3 wardrobes are needed given three sizes listed.",
+            "status": "stated",
+            "evidence": "Built-in robes for the kids' bedrooms.",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 8.14,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 549,
+          "output_tokens": 37,
+          "seconds": 1.04,
+          "cost_usd": 0.000734,
+          "cost_aud": 0.00111568
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1935,
+          "output_tokens": 611,
+          "seconds": 4.13,
+          "cost_usd": 0.00998,
+          "cost_aud": 0.015169599999999998
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1184,
+          "output_tokens": 141,
+          "seconds": 2.97,
+          "cost_usd": 0.003778,
+          "cost_aud": 0.00574256
+        }
+      ],
+      "cost_aud": 0.02202784
+    },
+    {
+      "enquiry_id": "E7",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "complaint",
+        "reason": "Customer is frustrated about a delayed response to a previous kitchen quote enquiry and threatening to take their business elsewhere."
+      },
+      "route": "route_to_person",
+      "card": null,
+      "evidence_changes": [],
+      "gaps": null,
+      "reply": null,
+      "brief": null,
+      "seconds": 1.21,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 515,
+          "output_tokens": 33,
+          "seconds": 1.21,
+          "cost_usd": 0.00068,
+          "cost_aud": 0.0010336000000000002
+        }
+      ],
+      "cost_aud": 0.0010336000000000002
+    },
+    {
+      "enquiry_id": "E8",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "not_enquiry",
+        "reason": "This is a supplier price list notification from a board and hardware supplier, not a customer inquiry or complaint."
+      },
+      "route": "skip",
+      "card": null,
+      "evidence_changes": [],
+      "gaps": null,
+      "reply": null,
+      "brief": null,
+      "seconds": 1.08,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 521,
+          "output_tokens": 38,
+          "seconds": 1.08,
+          "cost_usd": 0.000711,
+          "cost_aud": 0.00108072
+        }
+      ],
+      "cost_aud": 0.00108072
+    },
+    {
+      "enquiry_id": "E9",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is asking about the availability and pricing of a carport product with specific dimensions for their location."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Priya Shah",
+          "status": "stated",
+          "evidence": "Priya Shah"
+        },
+        "contact": {
+          "value": "0491 570 160",
+          "status": "stated",
+          "evidence": "0491 570 160"
+        },
+        "suburb": {
+          "value": "Glenroy",
+          "status": "stated",
+          "evidence": "Glenroy"
+        },
+        "product_type": {
+          "value": "carport",
+          "status": "stated",
+          "evidence": "single carport"
+        },
+        "other_products": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "timeframe": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "dimensions": {
+          "value": "about 3m x 6m",
+          "status": "stated",
+          "evidence": "about 3m x 6m"
+        },
+        "material_or_finish": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "colour": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "quantity": {
+          "value": "1",
+          "status": "stated",
+          "evidence": "single carport"
+        },
+        "install_required": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Customer asked whether the business does carports; this is not a listed product (kitchen, vanity, wardrobe). Dimensions are approximate.",
+          "status": "stated",
+          "evidence": "do you guys do carports?"
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": null,
+        "out_of_scope": true,
+        "required": [],
+        "missing": [],
+        "conflicts": []
+      },
+      "reply": {
+        "body": "Hi Priya,\n\nThanks for getting in touch. Unfortunately Wattlebird Kitchens & Joinery doesn't offer carports. We specialise in kitchens, vanities and wardrobes, so we won't be able to help with this one.",
+        "text": "Hi Priya,\n\nThanks for getting in touch. Unfortunately Wattlebird Kitchens & Joinery doesn't offer carports. We specialise in kitchens, vanities and wardrobes, so we won't be able to help with this one.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": [
+          "Out of scope: 'carport' isn't one of this business's products. The draft declines; check that's right before sending."
+        ]
+      },
+      "brief": {
+        "enquiry_id": "E9",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": null,
+        "missing": [],
+        "flags": [
+          "out of scope: 'carport' is not one of this business's products"
+        ],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Priya Shah",
+            "status": "stated",
+            "evidence": "Priya Shah",
+            "required": false
+          },
+          {
+            "field": "contact",
+            "value": "0491 570 160",
+            "status": "stated",
+            "evidence": "0491 570 160",
+            "required": false
+          },
+          {
+            "field": "suburb",
+            "value": "Glenroy",
+            "status": "stated",
+            "evidence": "Glenroy",
+            "required": false
+          },
+          {
+            "field": "product_type",
+            "value": "carport",
+            "status": "stated",
+            "evidence": "single carport",
+            "required": false
+          },
+          {
+            "field": "other_products",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "dimensions",
+            "value": "about 3m x 6m",
+            "status": "stated",
+            "evidence": "about 3m x 6m",
+            "required": false
+          },
+          {
+            "field": "material_or_finish",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "colour",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "quantity",
+            "value": "1",
+            "status": "stated",
+            "evidence": "single carport",
+            "required": false
+          },
+          {
+            "field": "install_required",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Customer asked whether the business does carports; this is not a listed product (kitchen, vanity, wardrobe). Dimensions are approximate.",
+            "status": "stated",
+            "evidence": "do you guys do carports?",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 6.33,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 508,
+          "output_tokens": 35,
+          "seconds": 1.17,
+          "cost_usd": 0.000683,
+          "cost_aud": 0.00103816
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1881,
+          "output_tokens": 488,
+          "seconds": 3.45,
+          "cost_usd": 0.008642,
+          "cost_aud": 0.013135840000000001
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1095,
+          "output_tokens": 92,
+          "seconds": 1.71,
+          "cost_usd": 0.00311,
+          "cost_aud": 0.0047272
+        }
+      ],
+      "cost_aud": 0.0189012
+    },
+    {
+      "enquiry_id": "E10",
+      "profile": "kitchens_joinery",
+      "classification": {
+        "label": "enquiry",
+        "reason": "Customer is asking about a replacement window job for their kitchen, providing specific dimensions and scope."
+      },
+      "route": "draft_reply",
+      "card": {
+        "customer_name": {
+          "value": "Liam Walsh",
+          "status": "stated",
+          "evidence": "Liam Walsh"
+        },
+        "contact": {
+          "value": "liam.walsh@example.com",
+          "status": "stated",
+          "evidence": "liam.walsh@example.com"
+        },
+        "suburb": {
+          "value": "Oak Park",
+          "status": "stated",
+          "evidence": "Oak Park"
+        },
+        "product_type": {
+          "value": "window replacement",
+          "status": "stated",
+          "evidence": "replace the two old aluminium windows"
+        },
+        "other_products": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "timeframe": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "dimensions": {
+          "value": "about 1200 x 900 each (units not stated, presumably mm, unconfirmed)",
+          "status": "stated",
+          "evidence": "1200 x 900"
+        },
+        "material_or_finish": {
+          "value": "Existing windows are aluminium; replacement material not specified",
+          "status": "inferred",
+          "evidence": "old aluminium windows"
+        },
+        "colour": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "quantity": {
+          "value": "2",
+          "status": "stated",
+          "evidence": "two old aluminium windows"
+        },
+        "install_required": {
+          "value": true,
+          "status": "inferred",
+          "evidence": "replace the two old aluminium windows"
+        },
+        "site_access": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "budget_mentioned": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "attachments_referenced": {
+          "value": null,
+          "status": "missing",
+          "evidence": null
+        },
+        "notes": {
+          "value": "Windows are located in the kitchen. Customer says the kitchen itself is fine and only the windows are wanted, so this is not a kitchen job. Windows may not be a product this business offers.",
+          "status": "stated",
+          "evidence": "Kitchen itself is fine, just the windows."
+        }
+      },
+      "evidence_changes": [],
+      "gaps": {
+        "product": null,
+        "out_of_scope": true,
+        "required": [],
+        "missing": [],
+        "conflicts": []
+      },
+      "reply": {
+        "body": "Hi Liam,\n\nThanks for getting in touch. Window replacement isn't something Wattlebird Kitchens & Joinery offers, so we won't be able to help with this one. We make kitchens, vanities and wardrobes, so if you ever need any of those, we'd be glad to hear from you.",
+        "text": "Hi Liam,\n\nThanks for getting in touch. Window replacement isn't something Wattlebird Kitchens & Joinery offers, so we won't be able to help with this one. We make kitchens, vanities and wardrobes, so if you ever need any of those, we'd be glad to hear from you.\n\nWarm regards,\nThe Wattlebird Kitchens & Joinery design team",
+        "blocked": false,
+        "hits": [],
+        "warnings": [
+          "Out of scope: 'window replacement' isn't one of this business's products. The draft declines; check that's right before sending."
+        ]
+      },
+      "brief": {
+        "enquiry_id": "E10",
+        "business": "Wattlebird Kitchens & Joinery (fictional)",
+        "product": null,
+        "missing": [],
+        "flags": [
+          "material_or_finish: inferred",
+          "install_required: inferred",
+          "out of scope: 'window replacement' is not one of this business's products"
+        ],
+        "fields": [
+          {
+            "field": "customer_name",
+            "value": "Liam Walsh",
+            "status": "stated",
+            "evidence": "Liam Walsh",
+            "required": false
+          },
+          {
+            "field": "contact",
+            "value": "liam.walsh@example.com",
+            "status": "stated",
+            "evidence": "liam.walsh@example.com",
+            "required": false
+          },
+          {
+            "field": "suburb",
+            "value": "Oak Park",
+            "status": "stated",
+            "evidence": "Oak Park",
+            "required": false
+          },
+          {
+            "field": "product_type",
+            "value": "window replacement",
+            "status": "stated",
+            "evidence": "replace the two old aluminium windows",
+            "required": false
+          },
+          {
+            "field": "other_products",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "timeframe",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "dimensions",
+            "value": "about 1200 x 900 each (units not stated, presumably mm, unconfirmed)",
+            "status": "stated",
+            "evidence": "1200 x 900",
+            "required": false
+          },
+          {
+            "field": "material_or_finish",
+            "value": "Existing windows are aluminium; replacement material not specified",
+            "status": "inferred",
+            "evidence": "old aluminium windows",
+            "required": false
+          },
+          {
+            "field": "colour",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "quantity",
+            "value": "2",
+            "status": "stated",
+            "evidence": "two old aluminium windows",
+            "required": false
+          },
+          {
+            "field": "install_required",
+            "value": true,
+            "status": "inferred",
+            "evidence": "replace the two old aluminium windows",
+            "required": false
+          },
+          {
+            "field": "site_access",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "budget_mentioned",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "attachments_referenced",
+            "value": null,
+            "status": "missing",
+            "evidence": null,
+            "required": false
+          },
+          {
+            "field": "notes",
+            "value": "Windows are located in the kitchen. Customer says the kitchen itself is fine and only the windows are wanted, so this is not a kitchen job. Windows may not be a product this business offers.",
+            "status": "stated",
+            "evidence": "Kitchen itself is fine, just the windows.",
+            "required": false
+          }
+        ]
+      },
+      "seconds": 8.05,
+      "calls": [
+        {
+          "step": "classify",
+          "model": "claude-haiku-4-5",
+          "input_tokens": 517,
+          "output_tokens": 33,
+          "seconds": 1.13,
+          "cost_usd": 0.000682,
+          "cost_aud": 0.00103664
+        },
+        {
+          "step": "extract",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1907,
+          "output_tokens": 592,
+          "seconds": 4.42,
+          "cost_usd": 0.009734,
+          "cost_aud": 0.01479568
+        },
+        {
+          "step": "reply",
+          "model": "claude-sonnet-5-5",
+          "input_tokens": 1124,
+          "output_tokens": 108,
+          "seconds": 2.5,
+          "cost_usd": 0.003328,
+          "cost_aud": 0.00505856
+        }
+      ],
+      "cost_aud": 0.02089088
+    }
+  ],
+  "cost": {
+    "per_enquiry": [
+      {
+        "enquiry_id": "E1",
+        "route": "draft_reply",
+        "seconds": 6.48,
+        "cost_usd": 0.0135,
+        "cost_aud": 0.02052
+      },
+      {
+        "enquiry_id": "E2",
+        "route": "draft_reply",
+        "seconds": 7.16,
+        "cost_usd": 0.012490000000000001,
+        "cost_aud": 0.018984800000000003
+      },
+      {
+        "enquiry_id": "E3",
+        "route": "draft_reply",
+        "seconds": 7.94,
+        "cost_usd": 0.014892,
+        "cost_aud": 0.02263584
+      },
+      {
+        "enquiry_id": "E4",
+        "route": "draft_reply",
+        "seconds": 6.45,
+        "cost_usd": 0.013328000000000001,
+        "cost_aud": 0.020258560000000002
+      },
+      {
+        "enquiry_id": "E5",
+        "route": "draft_reply",
+        "seconds": 6.61,
+        "cost_usd": 0.013196,
+        "cost_aud": 0.02005792
+      },
+      {
+        "enquiry_id": "E6",
+        "route": "draft_reply",
+        "seconds": 8.14,
+        "cost_usd": 0.014492,
+        "cost_aud": 0.02202784
+      },
+      {
+        "enquiry_id": "E7",
+        "route": "route_to_person",
+        "seconds": 1.21,
+        "cost_usd": 0.0006800000000000002,
+        "cost_aud": 0.0010336000000000002
+      },
+      {
+        "enquiry_id": "E8",
+        "route": "skip",
+        "seconds": 1.08,
+        "cost_usd": 0.000711,
+        "cost_aud": 0.00108072
+      },
+      {
+        "enquiry_id": "E9",
+        "route": "draft_reply",
+        "seconds": 6.33,
+        "cost_usd": 0.012435,
+        "cost_aud": 0.0189012
+      },
+      {
+        "enquiry_id": "E10",
+        "route": "draft_reply",
+        "seconds": 8.05,
+        "cost_usd": 0.013744000000000001,
+        "cost_aud": 0.02089088
+      }
+    ],
+    "by_model": {
+      "claude-haiku-4-5": {
+        "calls": 10,
+        "input_tokens": 5393,
+        "output_tokens": 375,
+        "cost_usd": 0.007268,
+        "cost_aud": 0.01104736
+      },
+      "claude-sonnet-5-5": {
+        "calls": 16,
+        "input_tokens": 24695,
+        "output_tokens": 5281,
+        "cost_usd": 0.10220000000000001,
+        "cost_aud": 0.15534399999999995
+      }
+    },
+    "total_aud": 0.16639136000000002,
+    "avg_aud_all": 0.016639136000000002,
+    "avg_aud_drafted": 0.02053463,
+    "monthly_aud_100_per_week": 8.898339666666667
+  }
+}

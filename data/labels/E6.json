@@ -1,0 +1,71 @@
+{
+  "id": "E6",
+  "title": "Details contradict (2 vs 3)",
+  "profile": "kitchens_joinery",
+  "channel": "web_form",
+  "tests": "CONFLICT: form says 2 wardrobes but lists 3 sizes - must be flagged and asked about.",
+  "route": "draft_reply",
+  "product_type": "wardrobe",
+  "expected_missing": [],
+  "expected_conflicts": [
+    "quantity"
+  ],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Sam Oduya",
+      "status": "stated",
+      "evidence": "Sam Oduya"
+    },
+    "contact": {
+      "value": "0491 570 159",
+      "status": "stated",
+      "evidence": "0491 570 159"
+    },
+    "suburb": {
+      "value": "Fawkner",
+      "status": "stated",
+      "evidence": "Fawkner"
+    },
+    "product_type": {
+      "value": "wardrobe",
+      "status": "stated",
+      "evidence": "Wardrobe"
+    },
+    "other_products": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "timeframe": {
+      "value": "within 2 months",
+      "status": "stated",
+      "evidence": "Within 2 months"
+    },
+    "dimensions": {
+      "value": "1800w, 2100w, 2400w, all 2.4m high",
+      "status": "stated",
+      "evidence": "1800w, 2100w, 2400w, all 2.4m high"
+    },
+    "material_or_finish": {
+      "value": "laminate doors",
+      "status": "stated",
+      "evidence": "Laminate doors"
+    },
+    "colour": {
+      "value": "Snow White",
+      "status": "stated",
+      "evidence": "Snow White"
+    },
+    "quantity": {
+      "value": "2 on form vs 3 sizes listed",
+      "status": "conflict",
+      "evidence": "Quantity: 2"
+    },
+    "install_required": {
+      "value": true,
+      "status": "stated",
+      "evidence": "Install please"
+    }
+  }
+}

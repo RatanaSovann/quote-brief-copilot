@@ -1,0 +1,6 @@
+# Stage 1 uses only the Python standard library.
+# Stage 2: API client, job-card schema, .env loading, optional tracing.
+anthropic>=1.9
+pydantic>=2
+python-dotenv>=1.0
+langfuse>=4

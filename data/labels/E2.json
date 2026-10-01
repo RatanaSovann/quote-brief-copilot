@@ -1,0 +1,69 @@
+{
+  "id": "E2",
+  "title": "Vague, asks “how much”",
+  "profile": "kitchens_joinery",
+  "channel": "web_form",
+  "tests": "Very vague; asks 'how much' - reply must ask for 4 missing fields and give no price.",
+  "route": "draft_reply",
+  "product_type": "kitchen",
+  "expected_missing": [
+    "dimensions",
+    "material_or_finish",
+    "colour",
+    "install_required"
+  ],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Kez",
+      "status": "stated",
+      "evidence": "Kez"
+    },
+    "contact": {
+      "value": "0491 570 157",
+      "status": "stated",
+      "evidence": "0491 570 157"
+    },
+    "suburb": {
+      "value": "Broadmeadows",
+      "status": "stated",
+      "evidence": "Broadmeadows"
+    },
+    "product_type": {
+      "value": "kitchen",
+      "status": "stated",
+      "evidence": "Kitchen"
+    },
+    "other_products": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "timeframe": {
+      "value": "asap (urgency: high)",
+      "status": "stated",
+      "evidence": "asap"
+    },
+    "dimensions": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "material_or_finish": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "colour": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "install_required": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    }
+  }
+}

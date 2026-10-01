@@ -1,0 +1,71 @@
+{
+  "id": "E4",
+  "title": "Shorthand call notes",
+  "profile": "kitchens_joinery",
+  "channel": "call_notes",
+  "tests": "Shorthand call notes; one inferred field (stone top?) that must be flagged, not stated.",
+  "route": "draft_reply",
+  "product_type": "vanity",
+  "expected_missing": [
+    "colour"
+  ],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Tom Nguyen",
+      "status": "stated",
+      "evidence": "Tom Nguyen"
+    },
+    "contact": {
+      "value": "0491 570 158",
+      "status": "stated",
+      "evidence": "0491 570 158"
+    },
+    "suburb": {
+      "value": "Coburg",
+      "status": "stated",
+      "evidence": "Coburg"
+    },
+    "product_type": {
+      "value": "vanity",
+      "status": "stated",
+      "evidence": "vanity for main bathroom"
+    },
+    "other_products": {
+      "value": "wardrobes (to be quoted later)",
+      "status": "stated",
+      "evidence": "wardrobes quoted later"
+    },
+    "timeframe": {
+      "value": "sometime in the new year (low urgency)",
+      "status": "stated",
+      "evidence": "sometime in new yr"
+    },
+    "dimensions": {
+      "value": "approx 1200mm wide",
+      "status": "stated",
+      "evidence": "approx 1200w"
+    },
+    "material_or_finish": {
+      "value": "stone top (unconfirmed)",
+      "status": "inferred",
+      "evidence": "stone top? not sure"
+    },
+    "colour": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "install_required": {
+      "value": true,
+      "status": "stated",
+      "evidence": "Wants install"
+    },
+    "notes": {
+      "value": "Wardrobes to be quoted later",
+      "status": "stated",
+      "evidence": "wife wants wardrobes quoted later too"
+    }
+  }
+}

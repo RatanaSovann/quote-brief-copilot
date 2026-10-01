@@ -1,0 +1,55 @@
+{
+  "id": "E10",
+  "title": "Says “kitchen”, wants windows",
+  "profile": "kitchens_joinery",
+  "channel": "web_form",
+  "tests": "OUT OF SCOPE, TRICKY: says 'kitchen' but wants windows replaced - must not be read as a kitchen job.",
+  "route": "draft_reply",
+  "product_type": "windows",
+  "in_scope": false,
+  "expected_missing": [],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Liam Walsh",
+      "status": "stated",
+      "evidence": "Liam Walsh"
+    },
+    "contact": {
+      "value": "liam.walsh@example.com",
+      "status": "stated",
+      "evidence": "liam.walsh@example.com"
+    },
+    "suburb": {
+      "value": "Oak Park",
+      "status": "stated",
+      "evidence": "Oak Park"
+    },
+    "product_type": {
+      "value": "windows",
+      "status": "stated",
+      "evidence": "aluminium windows"
+    },
+    "other_products": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "quantity": {
+      "value": "2",
+      "status": "stated",
+      "evidence": "two old aluminium windows"
+    },
+    "dimensions": {
+      "value": "about 1200 x 900 each",
+      "status": "stated",
+      "evidence": "about 1200 x 900 each"
+    },
+    "timeframe": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    }
+  }
+}

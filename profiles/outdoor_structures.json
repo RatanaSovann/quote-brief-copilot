@@ -1,0 +1,13 @@
+{
+  "profile_id": "outdoor_structures",
+  "business_name": "Ironbark Outdoor Structures (fictional)",
+  "product_types": ["carport", "shed", "verandah"],
+  "always_required": ["customer_name", "contact", "suburb", "product_type", "timeframe"],
+  "required_by_product": {
+    "carport":  ["dimensions", "material_or_finish", "colour", "install_required", "site_access"],
+    "shed":     ["dimensions", "material_or_finish", "colour", "install_required", "site_access"],
+    "verandah": ["dimensions", "material_or_finish", "colour", "install_required", "site_access"]
+  },
+  "reply_tone": "Friendly and plain. Short sentences. No jargon.",
+  "sign_off": "Cheers,\nThe Ironbark Outdoor Structures team"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "E3",
+  "title": "Long, rambling kitchen email",
+  "profile": "kitchens_joinery",
+  "channel": "email",
+  "tests": "Long rambling email; key details buried among backstory.",
+  "route": "draft_reply",
+  "product_type": "kitchen",
+  "expected_missing": [],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Mei Lin Tan",
+      "status": "stated",
+      "evidence": "Mei Lin Tan"
+    },
+    "contact": {
+      "value": "meilin.tan@example.com",
+      "status": "stated",
+      "evidence": "meilin.tan@example.com"
+    },
+    "suburb": {
+      "value": "Essendon",
+      "status": "stated",
+      "evidence": "Essendon"
+    },
+    "product_type": {
+      "value": "kitchen",
+      "status": "stated",
+      "evidence": "tackle the kitchen"
+    },
+    "other_products": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "timeframe": {
+      "value": "start in February",
+      "status": "stated",
+      "evidence": "hoping to start in February"
+    },
+    "dimensions": {
+      "value": "4.2m x 3m (room)",
+      "status": "stated",
+      "evidence": "The room is about 4.2 by 3 metres"
+    },
+    "material_or_finish": {
+      "value": "two-pac doors, handleless",
+      "status": "inferred",
+      "evidence": "two-pac doors"
+    },
+    "colour": {
+      "value": "undecided: white or soft grey",
+      "status": "inferred",
+      "evidence": "undecided between white and a soft grey"
+    },
+    "install_required": {
+      "value": true,
+      "status": "stated",
+      "evidence": "We'd want you to install it"
+    }
+  }
+}

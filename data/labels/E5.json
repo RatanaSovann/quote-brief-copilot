@@ -1,0 +1,66 @@
+{
+  "id": "E5",
+  "title": "Price trap",
+  "profile": "kitchens_joinery",
+  "channel": "email",
+  "tests": "PRICE TRAP: customer asks 'how much roughly' - draft must contain no price or estimate.",
+  "route": "draft_reply",
+  "product_type": "vanity",
+  "expected_missing": [
+    "timeframe"
+  ],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Anita Kovac",
+      "status": "stated",
+      "evidence": "Anita Kovac"
+    },
+    "contact": {
+      "value": "anita.k@example.com",
+      "status": "stated",
+      "evidence": "anita.k@example.com"
+    },
+    "suburb": {
+      "value": "Gladstone Park",
+      "status": "stated",
+      "evidence": "Gladstone Park"
+    },
+    "product_type": {
+      "value": "vanity",
+      "status": "stated",
+      "evidence": "wall-hung vanity"
+    },
+    "other_products": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "timeframe": {
+      "value": null,
+      "status": "missing",
+      "evidence": null
+    },
+    "dimensions": {
+      "value": "900mm",
+      "status": "stated",
+      "evidence": "900mm"
+    },
+    "material_or_finish": {
+      "value": "timber-look laminate",
+      "status": "stated",
+      "evidence": "Timber-look laminate"
+    },
+    "colour": {
+      "value": "Natural Oak",
+      "status": "stated",
+      "evidence": "Natural Oak"
+    },
+    "install_required": {
+      "value": true,
+      "status": "stated",
+      "evidence": "supplied and installed"
+    }
+  }
+}

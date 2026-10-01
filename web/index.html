@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Quote Brief Copilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Instrument+Serif:ital@1&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Case study · working prototype</p>
+        <h1>Quote Brief <em>Copilot</em></h1>
+        <p class="sub">Turns a messy customer enquiry into a job card, a draft reply and a quote brief. A person approves every message and sets every price. Nothing is ever sent, and the business and enquiries are fictional.</p>
+      </div>
+      <svg class="hero-art" viewBox="0 0 360 260" role="img" aria-label="A messy enquiry becomes a checked job card, then a draft reply a person approves">
+        <defs>
+          <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#22B8F0"/><stop offset=".5" stop-color="#3525E6"/><stop offset="1" stop-color="#D81FE0"/>
+          </linearGradient>
+        </defs>
+        <circle cx="250" cy="120" r="110" fill="url(#brand)" opacity=".14"/>
+        <!-- Enquiry: the customer's own words -->
+        <g transform="rotate(-6 70 70)">
+          <rect class="art-card" x="10" y="30" width="130" height="78" rx="14"/>
+          <text class="art-label" x="24" y="52">Enquiry</text>
+          <text class="art-quote" x="24" y="76">"need a new kitchen</text>
+          <text class="art-quote" x="24" y="94">asap how much"</text>
+        </g>
+        <path d="M120 120 C150 150 160 150 182 140" class="art-flow" marker-end="url(#arrow)"/>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="url(#brand)"/></marker>
+        <!-- Job card: statuses from code -->
+        <rect class="art-card" x="186" y="58" width="164" height="120" rx="14"/>
+        <text class="art-label" x="202" y="82">Job card</text>
+        <g class="art-row"><circle cx="208" cy="102" r="5" class="dot-ok"/><rect x="220" y="98" width="96" height="8" rx="4"/></g>
+        <g class="art-row"><circle cx="208" cy="124" r="5" class="dot-bad"/><rect x="220" y="120" width="72" height="8" rx="4"/></g>
+        <g class="art-row"><circle cx="208" cy="146" r="5" class="dot-bad"/><rect x="220" y="142" width="84" height="8" rx="4"/></g>
+        <g class="art-row"><circle cx="208" cy="166" r="5" class="dot-warn"/><rect x="220" y="162" width="60" height="8" rx="4"/></g>
+        <!-- Draft reply: a person approves -->
+        <rect class="art-card" x="40" y="168" width="150" height="72" rx="14"/>
+        <text class="art-label" x="56" y="192">Draft reply</text>
+        <rect class="art-line" x="56" y="202" width="110" height="7" rx="3.5"/>
+        <rect class="art-line" x="56" y="216" width="80" height="7" rx="3.5"/>
+        <circle cx="190" cy="232" r="18" fill="url(#brand)"/>
+        <path d="M181 232 l6 6 l11 -12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="problem" aria-selected="false">1 · Problem</button>
+      <button role="tab" data-tab="prototype" aria-selected="true">2 · Prototype</button>
+      <button role="tab" data-tab="method" aria-selected="false">3 · Method &amp; cost</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tab-problem" hidden>
+      <div>
+        <header class="intro">
+          <h2 class="lead">Every quote starts with a back-and-forth</h2>
+          <p class="sub">Enquiries arrive in the customer's own words and often miss something the estimator needs. Someone re-types them, works out what's missing and writes back, sometimes twice, before a quote can start.</p>
+        </header>
+
+        <section class="block">
+          <h3>One enquiry, start to finish</h3>
+          <figure class="msg">
+            <figcaption class="msg-meta">Web form · Broadmeadows · Kez (example E2 in the Prototype tab)</figcaption>
+            <blockquote>need a new kitchen asap how much</blockquote>
+          </figure>
+          <p>To start a quote, the estimator needs the room size, the finish, the colour and whether it's installed. Kez gave none of them, and asked for a price.</p>
+          <div class="compare with-sig">
+            <div class="panel">
+              <h4>Today</h4>
+              <ol class="flow">
+                <li>A rep re-types Kez's details into the quote sheet</li>
+                <li>Works out from memory what the estimator will need</li>
+                <li>Writes back, careful not to guess a price</li>
+                <li><strong>Result:</strong> Kez answers half; the rep writes again. The quote waits.</li>
+              </ol>
+            </div>
+            <p class="rounds" aria-label="Two rounds of replies become one">2 rounds <span aria-hidden="true">→</span> <span class="one">1</span></p>
+            <div class="panel accent">
+              <h4>With the copilot</h4>
+              <ol class="flow">
+                <li>The job card is filled in, each detail quoted from the form</li>
+                <li>The checklist shows the four missing details</li>
+                <li>A draft asks for exactly those, with no price</li>
+                <li class="human"><strong>Result:</strong> the rep reads it and approves. Kez is asked once.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="block">
+          <h3>Where the business value is</h3>
+          <p class="hint">Hypotheses, each with how it would be measured, mostly from the run log. No savings figures: without real enquiries, any number would be made up.</p>
+          <ul class="value">
+            <li class="value-head" aria-hidden="true"><span>Outcome</span><span>Why it matters</span><span>How it would be measured</span></li>
+            <li><strong>Faster first reply</strong><span>Customers asking for quotes often contact more than one business. A quick, clear reply keeps the lead warm.</span><span class="measure-text">Time to draft and time to decide; % of each draft edited (run log)</span></li>
+            <li><strong>Ask once, not twice</strong><span>Every extra round adds days before a quote and is another chance for the customer to drift away.</span><span class="measure-text">Rounds per quote, before and after (needs live inbox data)</span></li>
+            <li><strong>Estimators price, not chase</strong><span>A complete brief means estimator time goes on quoting, the work that brings in revenue.</span><span class="measure-text">Flagged fields per brief (run log)</span></li>
+            <li><strong>No promises it can't keep</strong><span>A price or date guessed in a first reply is hard to walk back. Upset customers get a person, not a template.</span><span class="measure-text">Screen hits per draft (run log); routing accuracy (evaluation)</span></li>
+          </ul>
+          <p>One quieter benefit: what "complete" means for each product is written down in one settings file. Today it may live in one experienced person's head; with the copilot, a new rep asks the same questions on day one.</p>
+        </section>
+
+        <section class="block">
+          <h3>Who it's for</h3>
+          <ul class="people">
+            <li><strong>Sales rep</strong><span>Less typing, and a reply they'd happily send</span></li>
+            <li><strong>Estimator</strong><span>A complete brief to price from</span></li>
+            <li><strong>Owner</strong><span>Control over what customers are told</span></li>
+            <li><strong>Customer</strong><span>A quick reply that asks once</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h3>What it doesn't do</h3>
+          <p>It doesn't price, send, or connect to an inbox or CRM. It prepares; a person decides. Those limits are deliberate: they keep the first version safe to trial.</p>
+        </section>
+
+        <details class="more block">
+          <summary>What I'd ask in discovery</summary>
+          <ul>
+            <li>How many enquiries a week, and through which channels?</li>
+            <li>What does a complete enquiry look like for each product, and who decides?</li>
+            <li>How many back-and-forths does a quote take today, and how long does the first reply take?</li>
+            <li>How often does a lead go quiet before a quote is sent?</li>
+            <li>Where do enquiries live now: shared inbox, CRM, paper?</li>
+            <li>What must a reply never say, besides prices and dates?</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section id="tab-prototype">
+      <header class="intro"><h2 class="lead">From messy enquiry to a reply you approve</h2></header>
+      <p id="load-error" class="banner bad" hidden></p>
+
+      <!-- 1. Input -->
+      <section class="step-block">
+        <div class="step-head">
+          <span class="num">1</span>
+          <div>
+            <h2>Choose an enquiry</h2>
+            <p class="hint">Sent to <strong id="business"></strong>, which sells <span id="products"></span>. Anything else is out of scope.</p>
+          </div>
+        </div>
+        <div class="segmented" role="tablist">
+          <button role="tab" data-mode="examples" aria-selected="true">Examples</button>
+          <button role="tab" data-mode="custom" aria-selected="false">Write your own</button>
+        </div>
+
+        <div id="mode-examples" class="examples"></div>
+
+        <form id="mode-custom" class="panel custom-form" hidden>
+          <p class="hint">Fill in what a customer would. Leave fields blank to see what gets asked for. Runs the real pipeline (about 2 AU cents) on the local server: <code>python src/serve.py</code>.</p>
+          <div class="presets"><span class="hint">Start from:</span></div>
+          <div class="form-grid">
+            <label>Name <input name="Name" autocomplete="off"></label>
+            <label>Phone or email <input name="Contact" autocomplete="off"></label>
+            <label>Suburb <input name="Suburb" autocomplete="off"></label>
+            <label>Product
+              <select name="Product">
+                <option value="">Not sure</option>
+                <option>Kitchen</option><option>Vanity</option><option>Wardrobe</option><option>Other</option>
+              </select>
+            </label>
+            <label class="wide">Message <textarea name="Message" maxlength="3000" placeholder="What are you after? Sizes, finish, colour, timing…"></textarea></label>
+          </div>
+          <div class="actions">
+            <button type="submit" id="custom-run" class="primary">Run the pipeline</button>
+            <span id="custom-status" class="hint" aria-live="polite"></span>
+          </div>
+        </form>
+      </section>
+
+      <!-- 2. Pipeline -->
+      <section class="step-block">
+        <div class="step-head">
+          <span class="num">2</span>
+          <div>
+            <h2>What happened</h2>
+            <p class="hint" id="run-summary"></p>
+          </div>
+        </div>
+        <ol id="steps" class="steps"></ol>
+      </section>
+
+      <!-- 3. Review -->
+      <section class="step-block">
+        <div class="step-head">
+          <span class="num">3</span>
+          <div>
+            <h2>Review and decide</h2>
+            <p class="hint">Select any job card field to see the exact words it came from.</p>
+          </div>
+        </div>
+        <div class="grid">
+          <article class="panel message-panel">
+            <h3>Customer's message</h3>
+            <p class="hint">Underlined words are the evidence behind job card fields.</p>
+            <div id="message" class="message"></div>
+          </article>
+          <div class="stack">
+            <article class="panel"><h3>Draft reply <small class="hint">for the sales rep</small></h3><div id="reply"></div></article>
+            <article class="panel"><h3>Job card</h3><div id="card"></div></article>
+            <article class="panel"><h3>Quote brief <small class="hint">for the estimator</small></h3><div id="brief"></div></article>
+          </div>
+        </div>
+      </section>
+
+      <details class="panel runlog">
+        <summary><h3>Run log</h3> <span class="hint" id="runlog-count"></span></summary>
+        <p class="hint">Every approve or reject is logged, in this browser only.</p>
+        <div id="runlog"></div>
+      </details>
+    </section>
+
+    <section id="tab-method" hidden>
+      <div>
+        <header class="intro">
+          <h2 class="lead">How it works, and what it costs</h2>
+          <p class="sub">Tested on hand-written messages. Every number here is read from the saved results, not typed in.</p>
+        </header>
+        <div class="tiles" id="m-tiles"></div>
+
+        <section class="block">
+          <h3>Who does what</h3>
+          <p>AI reads and drafts, code checks, a person decides.</p>
+          <div class="lanes">
+            <div class="lane"><span class="by ai">AI</span><h4>Reads and writes</h4>
+              <ul><li>Sorts each message</li><li>Fills in the job card</li><li>Drafts the reply</li></ul></div>
+            <div class="lane"><span class="by code">Code</span><h4>Checks</h4>
+              <ul><li>Every detail has a quote</li><li>What's missing, from the business's list</li><li>No prices or dates</li></ul></div>
+            <div class="lane"><span class="by person">Person</span><h4>Decides</h4>
+              <ul><li>Approves every reply</li><li>Sets every price</li></ul></div>
+          </div>
+          <details class="more">
+            <summary>All 9 steps</summary>
+            <div class="table-wrap"><table>
+              <tr><th>Step</th><th>By</th><th>Why that way</th></tr>
+              <tr><td>1 Classify the message</td><td><span class="by ai">AI</span></td><td>Reading intent needs language understanding; the cheap model is enough</td></tr>
+              <tr><td>2 Route it</td><td><span class="by code">Code</span></td><td>The AI can't talk its way into replying to an upset customer</td></tr>
+              <tr><td>3 Extract the job card</td><td><span class="by ai">AI</span></td><td>Messy wording and contradictions need a stronger model</td></tr>
+              <tr><td>4 Check every quote</td><td><span class="by code">Code</span></td><td>A detail without words from the message is downgraded</td></tr>
+              <tr><td>5 Find what's missing</td><td><span class="by code">Code</span></td><td>The business defines "complete", not the AI</td></tr>
+              <tr><td>6 Draft the reply</td><td><span class="by ai">AI</span></td><td>Natural writing is what models are good at</td></tr>
+              <tr><td>7 Screen for prices and dates</td><td><span class="by code">Code</span></td><td>A prompt is a request; this is the guarantee</td></tr>
+              <tr><td>8 Build the brief</td><td><span class="by code">Code</span></td><td>Same format every time</td></tr>
+              <tr><td>9 Approve or reject</td><td><span class="by person">Person</span></td><td>Nothing reaches a customer without a person</td></tr>
+            </table></div>
+          </details>
+        </section>
+
+        <section class="block">
+          <h3>Does it work?</h3>
+          <div id="m-eval"></div>
+        </section>
+
+        <section class="block">
+          <h3>What it costs</h3>
+          <div id="m-cost"></div>
+        </section>
+
+        <section class="block">
+          <h3>The data</h3>
+          <div id="m-data"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="views.js"></script>
+  <script src="runlog.js"></script>
+  <script src="method.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

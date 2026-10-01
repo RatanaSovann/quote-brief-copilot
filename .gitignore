@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+out/
+
+# Personal working files: kept on this computer, never pushed.
+CLAUDE.md
+STAGES.md
+DECISIONS.md
+docs/

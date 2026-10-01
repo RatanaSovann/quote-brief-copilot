@@ -1,0 +1,34 @@
+{
+  "id": "E7",
+  "title": "Angry follow-up",
+  "profile": "kitchens_joinery",
+  "channel": "email",
+  "tests": "ROUTING: angry follow-up - no draft, route to a person.",
+  "route": "route_to_person",
+  "product_type": "kitchen",
+  "expected_missing": [],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {
+    "customer_name": {
+      "value": "Greg Pappas",
+      "status": "stated",
+      "evidence": "Greg Pappas"
+    },
+    "contact": {
+      "value": "0491 570 110",
+      "status": "stated",
+      "evidence": "0491 570 110"
+    },
+    "suburb": {
+      "value": "Hadfield",
+      "status": "stated",
+      "evidence": "Hadfield"
+    },
+    "product_type": {
+      "value": "kitchen",
+      "status": "stated",
+      "evidence": "new kitchen"
+    }
+  }
+}

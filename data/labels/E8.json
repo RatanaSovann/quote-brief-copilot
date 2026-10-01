@@ -1,0 +1,13 @@
+{
+  "id": "E8",
+  "title": "Supplier price list",
+  "profile": "kitchens_joinery",
+  "channel": "email",
+  "tests": "ROUTING: supplier price list, not a customer enquiry - skip.",
+  "route": "skip",
+  "product_type": null,
+  "expected_missing": [],
+  "expected_conflicts": [],
+  "must_not_contain_price": true,
+  "fields": {}
+}

@@ -1,0 +1,13 @@
+{
+  "profile_id": "windows_doors",
+  "business_name": "Kestrel Windows & Doors (fictional)",
+  "product_types": ["windows", "sliding door", "security screen"],
+  "always_required": ["customer_name", "contact", "suburb", "product_type", "timeframe"],
+  "required_by_product": {
+    "windows":         ["dimensions", "quantity", "material_or_finish", "install_required"],
+    "sliding door":    ["dimensions", "quantity", "material_or_finish", "install_required"],
+    "security screen": ["dimensions", "quantity", "material_or_finish", "install_required"]
+  },
+  "reply_tone": "Direct and practical, trade-style. Get to the point.",
+  "sign_off": "Thanks,\nKestrel Windows & Doors"
+}
