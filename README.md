@@ -131,6 +131,32 @@ To make sure the change is down to the tool and not a busy or quiet month, compa
 
 ## How the prototype works: AI reads and drafts, code checks, a person decides
 
+```mermaid
+flowchart TD
+    E["Customer enquiry<br/>(email, web form, phone note)"] --> C["1 · Classify<br/>Claude Haiku 4.5"]
+    C --> R{"2 · Route<br/>plain rules"}
+    R -- complaint --> P1["Route to a person<br/>no draft"]
+    R -- not an enquiry --> S["Skip<br/>no draft"]
+    R -- enquiry --> X["3 · Extract job card<br/>Claude Sonnet 5.5"]
+    X --> V["4 · Check quotes<br/>'stated' needs a verbatim quote"]
+    V --> M["5 · What's missing<br/>vs required fields in the profile"]
+    BP[("Business profile<br/>required fields + tone")] -.-> M
+    M --> D["6 · Draft reply<br/>Claude Sonnet 5.5"]
+    D --> G["7 · Screen<br/>block price, discount, lead time, date"]
+    G --> B["8 · Quote brief<br/>for the estimator"]
+    B --> H{"9 · Person decides<br/>approve · edit · reject"}
+    H -- approve --> OUT["Reply sent by the rep<br/>brief goes to estimator"]
+
+    classDef ai fill:#ede9fe,stroke:#3525e6,color:#1e1b4b
+    classDef code fill:#f4f4f5,stroke:#71717a,color:#18181b
+    classDef person fill:#3525e6,stroke:#3525e6,color:#ffffff
+    class C,X,D ai
+    class R,V,M,G,B,S,BP code
+    class P1,H,OUT person
+```
+
+*Purple = AI · grey = code · solid indigo = a person.*
+
 | Step | By | What it does |
 |---|---|---|
 | Classify | AI (Claude Haiku 4.5) | Enquiry, complaint or not an enquiry |
@@ -182,6 +208,60 @@ copy .env.example .env          # then put your key in .env
 The hosted demo shows saved runs only. Live runs use your own API key, so they work only on your computer.
 
 Full specification: [`SPEC.md`](SPEC.md).
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph inputs["Inputs (plain files)"]
+        PR["profiles/*.json<br/>required fields, tone"]
+        EN["data/enquiries<br/>E1–E10"]
+        LB["data/labels<br/>correct answers"]
+        PM["prompts/*.txt"]
+    end
+
+    subgraph src["src/ (Python)"]
+        PL["pipeline.py<br/>steps 1–8"]
+        LLM["llm.py<br/>every model call,<br/>tokens + cost"]
+        CFG["config.py<br/>models + prices"]
+        RA["run_all.py"]
+        SV["serve.py<br/>localhost only"]
+        subgraph evaluation["Evaluation"]
+            EV["eval.py<br/>runs E1–E10"]
+            SC["scoring.py<br/>run vs correct answer"]
+        end
+    end
+
+    API(["Anthropic API"])
+
+    subgraph web["web/ (static demo page)"]
+        RJ["runs.json"]
+        EJ["eval.json"]
+        UI["index.html + JS"]
+    end
+
+    GH(["GitHub Pages<br/>saved runs only"])
+
+    PR & PM --> PL
+    PL --> LLM --> API
+    CFG --> LLM
+    EN --> RA & EV
+    LB -- "business + title only" --> RA
+    LB -- "correct answers" --> SC
+    RA --> PL
+    EV --> PL
+    EV --> SC
+    RA --> RJ
+    SC --> EJ
+    RJ & EJ --> UI
+    SV -- "live 'try your own' run" --> PL
+    SV -- serves --> UI
+    UI -- "GitHub Actions" --> GH
+
+    style evaluation fill:#C7C5C3,stroke:#d97706,color:#78350f
+```
+
+The pipeline is one function (`pipeline.run`) used by every entry point, so the evaluation, the saved demo runs and the live runs all go through exactly the same steps. The hosted page has no server: it reads `runs.json` and `eval.json`, so the numbers it shows were measured, not typed in. Live runs need your own API key and only work through `serve.py` on your computer.
 
 ## Project layout
 
