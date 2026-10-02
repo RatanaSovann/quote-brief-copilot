@@ -213,49 +213,32 @@ Full specification: [`SPEC.md`](SPEC.md).
 
 ```mermaid
 flowchart LR
-    subgraph inputs["Inputs (plain files)"]
-        PR["profiles/*.json<br/>required fields, tone"]
-        EN["data/enquiries<br/>E1–E10"]
-        LB["data/labels<br/>correct answers"]
-        PM["prompts/*.txt"]
-    end
+    CFG[("profiles/ + prompts/<br/>fields, tone, instructions")]
+    DATA[("data/<br/>E1–E10 enquiries<br/>+ correct answers")]
 
     subgraph src["src/ (Python)"]
-        PL["pipeline.py<br/>steps 1–8"]
-        LLM["llm.py<br/>every model call,<br/>tokens + cost"]
-        CFG["config.py<br/>models + prices"]
+        SV["serve.py<br/>live runs"]
         RA["run_all.py"]
-        SV["serve.py<br/>localhost only"]
         subgraph evaluation["Evaluation"]
-            EV["eval.py<br/>runs E1–E10"]
-            SC["scoring.py<br/>run vs correct answer"]
+            EV["eval.py"] --> SC["scoring.py"]
         end
+        PL["pipeline.py<br/>steps 1–8"]
+        LLM["llm.py + config.py<br/>tokens + cost"]
     end
 
     API(["Anthropic API"])
+    RJ["web/runs.json"]
+    EJ["web/eval.json"]
+    UI["web/ demo page<br/>index.html + JS"]
+    GH(["GitHub Pages"])
 
-    subgraph web["web/ (static demo page)"]
-        RJ["runs.json"]
-        EJ["eval.json"]
-        UI["index.html + JS"]
-    end
-
-    GH(["GitHub Pages<br/>saved runs only"])
-
-    PR & PM --> PL
+    CFG ---> PL
+    DATA --> RA & EV
+    SV & RA & EV --> PL
     PL --> LLM --> API
-    CFG --> LLM
-    EN --> RA & EV
-    LB -- "business + title only" --> RA
-    LB -- "correct answers" --> SC
-    RA --> PL
-    EV --> PL
-    EV --> SC
     RA --> RJ
-    SC --> EJ
+    SC ---> EJ
     RJ & EJ --> UI
-    SV -- "live 'try your own' run" --> PL
-    SV -- serves --> UI
     UI -- "GitHub Actions" --> GH
 
     style evaluation fill:#C7C5C3,stroke:#d97706,color:#78350f
